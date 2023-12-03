@@ -1,0 +1,435 @@
+/* Reset styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Header and nav styling */
+header {
+  height: 7vh;
+  width: 100%;
+  z-index: 5;
+  padding: 1rem;
+  background-color: rgb(40, 39, 39);
+  position: fixed;
+
+  /* Styling for navigation list */
+  & .nav-list[data-visible="true"] {
+    transform: translateX(100%);
+  }
+  & .nav-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    /* Styling for list items and links in navigation */
+    & li,
+    & a {
+      transition: color 200ms ease-in-out;
+      color: rgb(224, 220, 220);
+      text-decoration: none;
+      list-style: none;
+    }
+
+    /* Hover effect on list items and links */
+    & :hover {
+      color: rgb(255, 89, 0);
+      transform: scale(1.2);
+      padding-bottom: 0.9rem;
+      border-bottom: 2px solid rgb(255, 89, 0);
+      transition: color 350ms ease-in-out;
+    }
+
+    /* Media query for smaller screens */
+    @media (width <= 38.5625rem) {
+      position: relative;
+      height: 93vh;
+      z-index: 10;
+      flex-direction: column;
+      align-items: start;
+      gap: 2rem;
+      inset: 0 0 0 20%;
+      padding: min(20vh, 10rem) 2.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: hsl(0 0% 0% / 0.71);
+      backdrop-filter: blur(2rem);
+
+      /* Support for backdrop filter */
+      @supports (backdrop-filter: blur(1rem)) {
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(2rem);
+      }
+    }
+  }
+
+  /* Hamburger menu styles */
+  & .hamburger {
+    position: absolute;
+    left: 90%;
+    display: block;
+    background-color: #232042;
+    color: rgb(224, 220, 220);
+    cursor: pointer;
+    border: none;
+    transition: all 200ms;
+    z-index: 11;
+
+    /* Hover effect on hamburger icon */
+    & :hover {
+      background-color: #232042;
+      color: rgb(224, 220, 220);
+      transform: scale(1.2);
+    }
+
+    #hamburger-icon {
+      background-color: rgb(3, 3, 27);
+      height: 1.5rem;
+    }
+
+    /* Media query for larger screens */
+    @media (width >= 38.5625rem) {
+      display: none;
+    }
+  }
+}
+
+/* About section styles */
+.about-section {
+  background-color: #232042;
+  padding: 2rem;
+
+  & h2 {
+    padding-top: 1.5rem;
+    text-align: center;
+    color: antiquewhite;
+  }
+
+  /* Styling for the "about" content */
+  #about {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    & h2 {
+      text-align: center;
+      padding-top: 1.5rem;
+    }
+
+    /* Styling for the author image */
+    & .author-image {
+      flex: 3;
+      order: 1;
+      background-image: url(./assets/IMG_20210715_044336_768.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 4px;
+      width: 100%;
+      min-height: 30rem;
+    }
+
+    /* Styling for the about text */
+    & .about-text {
+      color: antiquewhite;
+      flex: 2;
+      order: 2;
+      text-align: center;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Project article section styles */
+.project-section {
+  background-color: #f2f2f2;
+  transition: all 200ms ease-in-out;
+  padding: 2rem;
+
+  & h2 {
+    color: #232042;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+
+  /* Styling for the projects grid */
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center;
+
+    /* Hover effect on project links */
+    & a:hover {
+      color: #232042;
+    }
+
+    /* Styling for project titles */
+    & .project-title {
+      display: block;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
+      color: #232042;
+      text-decoration: none;
+    }
+
+    /* Styling for project images */
+    & .project-image {
+      height: 12.5rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 3px;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Styling for project card paragraphs */
+    & .project-card p {
+      padding: 0.5rem 1rem;
+      line-height: 1.5;
+      text-align: left;
+      color: #868686;
+      font-size: 0.8rem;
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+
+    /* Styling for project cards */
+    & .project-card {
+      border-radius: 0.312rem;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
+    }
+  }
+
+  /* Hover effect on project cards */
+  .project-card:hover {
+    transform: translateY(0.5rem);
+    box-shadow: 4px 4px 14px #000;
+  }
+}
+
+/* Contact section styles */
+#contact {
+  padding: 2rem;
+  background-color: #232042;
+  color: antiquewhite;
+
+  & h2 {
+    text-align: center;
+  }
+
+  /* Styling for the contact content */
+  .contact {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 2rem;
+
+    /* Media query for smaller screens */
+    @media (width <= 38.6528rem) {
+      flex-direction: column;
+    }
+
+    /* Styling for the contact labels and icons */
+    & .contact-label {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "header header header" "text text text" "ig twitter whatsapp";
+      place-items: center;
+      gap: 1rem;
+      color: azure;
+      background-color: rgb(49, 4, 4);
+      border-radius: 14px;
+
+      /* Styling for the media titles */
+      .media-title {
+        place-self: center;
+        grid-area: header;
+      }
+      .text {
+        place-self: center;
+        padding: 8px;
+        grid-area: text;
+      }
+      /* Styling for the Instagram icon */
+      .ig {
+        place-self: center;
+        grid-area: ig;
+      }
+
+      /* Styling for the Twitter icon */
+      .twitter {
+        place-self: center;
+        grid-area: twitter;
+      }
+
+      /* Styling for the WhatsApp icon */
+      .whatsapp {
+        place-self: center;
+        grid-area: whatsapp;
+      }
+    }
+
+    /* Hover effect on media icons */
+    .media-icon:hover {
+      transform: scale(1.3);
+    }
+
+    /* Hover effect on media titles and icons */
+    & .media-title,
+    & .ig,
+    & .twitter.whatsapp :hover {
+      box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
+    }
+
+    /* Styling for the contact form */
+    & .contact-form {
+      display: flex;
+      flex-direction: column;
+      justify-self: end;
+      gap: 1.5rem;
+
+      /* Styling for input fields */
+      & input {
+        padding-left: 0.8rem;
+        border: 0.8px solid #232042;
+        border-top: 0px;
+      }
+
+      /* Styling for the placeholder in input fields */
+      .contact-form input:focus ::placeholder {
+        color: transparent;
+      }
+
+      /* Styling for the submit button */
+      .submit-btn {
+        width: 6rem;
+        cursor: pointer;
+        padding: 0.6rem;
+        border: none;
+        border-radius: 4px;
+        background-color: rgb(49, 4, 4);
+        color: aliceblue;
+      }
+
+      /* Hover effect on the submit button */
+      & .submit-btn:hover {
+        background-color: orange;
+      }
+    }
+  }
+}
+.cta {
+  line-height: 0.5;
+  font-size: 0.5rem;
+  text-align: center;
+}
+/* Footer section styles */
+.footer {
+  padding: 0.625rem;
+  text-align: center;
+  color: rgb(197, 198, 198);
+  background-color: #232042;
+}
+
+/* Utility class */
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Slide-up animation */
+.slideUp {
+  animation: slideUp 180ms ease-in-out forwards;
+}
+
+/* Media queries */
+@media (width <= 38.5625rem) {
+  /* Styling for "about" and "projects" sections on smaller screens */
+  #about,
+  #projects {
+    padding: 1rem;
+  }
+
+  /* Styling for the "about" section on smaller screens */
+  .about-section {
+    padding: 1rem;
+
+    /* Styling for the "about" content on smaller screens */
+    #about {
+      padding: 1rem;
+      flex-direction: column;
+      align-items: center;
+
+      & .author-image {
+        min-height: 12.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  /* Styling for the "project" section on smaller screens */
+  .project-section {
+    padding: 1rem;
+
+    /* Styling for the projects grid on smaller screens */
+    #projects {
+      padding: 1rem;
+
+      & .project-title {
+        font-size: 1.2rem;
+      }
+
+      & .project-image {
+        height: 9rem;
+        margin-bottom: 0.6rem;
+      }
+
+      & .project-card p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  /* Styling for the "contact" section on smaller screens */
+  #contact {
+    padding: 1rem;
+
+    & .contact {
+      padding: 1rem;
+
+      & .contact-form input {
+        font-size: 0.9rem;
+      }
+
+      & .submit-btn {
+        width: 4rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* Keyframes for slide-up animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

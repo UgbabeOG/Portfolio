@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>countDown</title>
+    <style>
+      form {
+        background-image: linear-gradient(blue, orange);
+        max-width: 30rem;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 4px 4px 16px -8px;
+      }
+      input,
+      select,
+      textarea,
+      form button {
+        width: -webkit-fill-available;
+        border-radius: 2rem;
+        border: 1px solid #0004;
+        margin-bottom: 0.8rem;
+        padding: 0.25rem 1rem;
+      }
+
+      form button:hover {
+        box-shadow: 4px 4px 16px -2px;
+      }
+
+      input:focus::placeholder {
+        color: transparent;
+      }
+
+      form button {
+        cursor: pointer;
+        background-color: #f9f9fd;
+      }
+
+      .result,
+      .timer-result,
+      .countdown-result {
+        color: white;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        display: compact;
+        border-radius: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" class="countdown-form">
+      <h3 class="section-title">Countdown Timer</h3>
+      <input
+        type="date"
+        required
+        placeholder="Enter Date to begin Countdown"
+        class="countdown-timer"
+      />
+      <button type="submit" class="countdown-btn">Start Countdown</button>
+      <div class="countdown-result"></div>
+    </form>
+    <script>
+      const getOne = (x) => document.querySelector(x),
+        getAll = (x) => document.querySelectorAll(x);
+      let countdownForm = getOne(".countdown-form"),
+        countdownDate = getOne(".countdown-timer"),
+        countdownBtn = getOne(".countdown-btn"),
+        countdownResult = getOne(".countdown-result"),
+        countdownController;
+
+      if (countdownForm) {
+        countdownResult.style.textAlign = "center";
+        countdownForm.onsubmit = (e) => {
+          e.preventDefault();
+          clearInterval(countdownController);
+          let givenDate = new Date(countdownDate.value);
+          countdownController = setInterval(() => {
+            let presentDate = new Date();
+            let givenTime = (givenDate.getTime() / 1000).toFixed(0);
+            let presentTime = (presentDate.getTime() / 1000).toFixed(0);
+            let targetTime = Math.abs(givenTime - presentTime);
+            if (targetTime == 0) {
+              clearInterval(countdownController);
+              countdownResult.innerHTML = "Hurray!";
+            } else {
+              /* 
+          addLeadingZeros = (number) => (number < 10 ? "0" + number : number);
+          const pluralize = (variable, text) => {
+            variable < 2 ? text : text + "s";
+          };
+          */
+
+              /*
+          
+          addZeroAndPluralize = (...args) => {
+            if (args == 1) {
+              args[0] < 10 ? "0" + args[0] : args[0];
+            }
+            if (args == 2) {
+              args[0] < 2 ? args[1] : args[1] + "s";
+            }
+          };
+    
+          */
+
+              const combined = (variable, text) => {
+                let addZero = variable < 10 ? "0" + variable : variable,
+                  pluralize = variable < 2 ? text : text + "s";
+                return addZero + pluralize;
+              };
+
+              // countdownResult.innerHTML = `${dayTarget} Day(s) : ${hourTarget} Hour(s) : ${minTarget} Minute(s) : ${secTarget}${secText}`;
+
+              let dayTarget = Math.floor(targetTime / 86400);
+              dayTarget = combined(dayTarget, " Day");
+              // dayTarget = addLeadingZeros(dayTarget);
+              //dayTarget < 10 ? (dayTarget = "0" + dayTarget) : dayTarget;
+              //60sec* 60min*24hr(modul 24 to extract the exact hour of the day)=86400
+
+              let hourTarget = Math.floor(targetTime / 3600) % 24;
+              hourTarget = combined(hourTarget, " Hour");
+              // hourTarget = addLeadingZeros(hourTarget);
+              // hourTarget < 10 ? (hourTarget = "0" + hourTarget) : hourTarget;
+              // if (hourtarget < 10){hourtarget = "0" + hourtarget}else{hourtarget}
+              //60sec*60min
+
+              let minTarget = Math.floor(targetTime / 60) % 60;
+              minTarget = combined(minTarget, " Minute");
+              // minTarget = addLeadingZeros(minTarget);
+              // minTarget < 10 ? (minTarget = "0" + minTarget) : minTarget;
+
+              let secTarget = Math.floor(targetTime % 60);
+              secTarget = combined(secTarget, " Second");
+              // secTarget = addLeadingZeros(secTarget);
+              // secTarget < 10 ? (secTarget = "0" + secTarget) : secTarget;
+
+              countdownResult.innerHTML = `${dayTarget} : ${hourTarget} 
+           : ${minTarget} : ${secTarget}`;
+            }
+          }, 1000);
+        };
+      }
+    </script>
+  </body>
+</html>
