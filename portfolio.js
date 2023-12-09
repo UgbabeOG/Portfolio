@@ -1,23 +1,31 @@
 const _$ = (x) => document.querySelector(x),
-  $$ = (x) => document.querySelectorAll(x);
+  $$ = (x) => document.querySelectorAll(x),
+  hamburgerIcon = _$("#hamburger-icon"),
+  body = _$(".body"),
+  hamburger = _$(".hamburger"),
+  navLinks = $$("#navlinks"),
+  navList = _$(".nav-list-mobile"),
+  isVisible = navList.dataset.visible === "true";
 
-const hamburger = _$(".hamburger");
-const hamburgerIcon = _$("#hamburger-icon");
-const asideMenu = _$(".side-menu"),
-  nav = _$(".nav-list"),
-  body = _$(".body");
 hamburger.addEventListener("click", () => {
- 
-  const visibility = nav.getAttribute("data-visible");
-  if (visibility === "false") {
-    nav.setAttribute("data-visible", true);
-    hamburger.setAttribute("aria-expanded", true);
-    body.classList.remove("no-scroll");
-  } else {
-    nav.setAttribute("data-visible", false);
-    hamburger.setAttribute("aria-expanded", false);
-    body.classList.add("no-scroll");
-  }
+  navList.dataset.visible = !isVisible;
+  hamburger.setAttribute("aria-expanded", !isVisible);
+  body.classList.toggle("no-scroll");
+  hamburgerIcon.classList.replace(
+    isVisible ? "fa-x" : "fa-bars",
+    isVisible ? "fa-bars" : "fa-x"
+  );
+
+  navList.style.transform = isVisible ? "translateX(100%)" : "translateX(0%)";
+});
+const closeSidebar = () => {
+  navList.dataset.visible = !isVisible;
+  hamburger.setAttribute("aria-expanded", !isVisible);
+  navList.style.transform = "translateX(100%)";
+  body.classList.remove("no-scroll");
+}; //fix this code asap
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => closeSidebar())//edit the function check if navList is display flex direction column;
 });
 
 // intersection observer

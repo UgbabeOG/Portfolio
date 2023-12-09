@@ -4,134 +4,270 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/portf/styles.css">
+    <!-- Meta tags for SEO -->
+    <meta
+      name="description"
+      content="My portfolio website showcasing my skills and experience in web development."
+    />
+    <meta
+      name="keywords"
+      content="web developer, portfolio, front-end, back-end, web design"
+    />
+    <meta name="author" content="Ugbabe Choco" />
+    <meta name="title" content="Choco's Portfolio - Web Developer" />
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Choco's Portfolio - Web Developer" />
+    <meta
+      property="og:description"
+      content="My portfolio website showcasing my skills and experience in web development."
+    />
+
+    <meta property="og:url" content="https://chocos-portfolio.netlify.app" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Choco's Portfolio</title>
     <script src="./all.min.js" defer></script>
     <script src="./portfolio.js" defer></script>
-    <title>My Portfolio</title>
   </head>
-  <body class="body ">
+
+  <body class="body">
     <header>
       <nav>
-        <button class="hamburger" aria-controls="navigation" aria-expanded="false">
-          <i id="hamburger-icon"class="fa fa-x"></i>
+        <button
+          class="hamburger"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          <i id="hamburger-icon" class="fa fa-x"></i>
         </button>
-        <ul class="nav-list" id="navigation" data-visible="true">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects"> Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="nav-list">
+          <li ><a href="#about">About</a></li>
+          <li ><a href="#projects">Projects</a></li>
+          <li ><a href="#contact">Contact</a></li>
         </ul>
-       
+        <aside class="sideMenu">
+          <ul class="nav-list-mobile" id="navigation" data-visible="false">
+            <li id="navlinks"><a href="#about">About</a></li>
+            <li id="navlinks"><a href="#projects">Projects</a></li>
+            <li id="navlinks"><a href="#contact">Contact</a></li>
+          </ul>
+        </aside>
       </nav>
     </header>
+
     <section class="about-section">
-      <h2>About </h2>
+      <h2>About</h2>
       <div id="about">
-        <div class="author-image">
-        </div>
+        <div class="author-image"></div>
         <div class="about-text">
           <p>
-Hello, I'm Ugbabe Owoicho Godwin, a talented front-end web developer with expertise in HTML, CSS, and JavaScript. With a passion for creating visually stunning and user-friendly websites, Ugbabe combines his technical skills with a keen eye for design to deliver captivating digital experiences. His commitment to continuous learning and staying updated with the latest industry trends allows him to craft modern and responsive websites that leave a lasting impression. Ugbabe's dedication to his craft and his ability to bring ideas to life make him an invaluable asset to any web development project.</p>
-            <p> Thank you for visiting!</p>
-              <p>Ugbabe Owoicho Godwin</p>
-
-           
+            Hello, I'm Ugbabe Godwin, a talented web developer with expertise in
+            HTML, CSS, JavaScript, React, and NodeJs. I have a passion for
+            creating visually stunning and user-friendly websites. My commitment
+            to continuous learning and staying updated with the latest industry
+            trends allows me to craft modern and responsive web solutions that
+            leave a lasting impression. Thank you for visiting!
           </p>
-        </div>
-      </div>  
-    </section>
-    <section class="project-section obs">
-      <h2>My Projects</h2>
-    <p style="color:#232042 ; padding: 1.2rem ;">Explore my impressive portfolio of web development projects, featuring Rock Paper Scissors, Simple Countdown, Calculator, EasyBank Landing Page, and Tic Tac Toe game, Analog Clock.</p>
-      <d id="projects">
-        <article class="project-card">
-          <div class="project-image"style="background-image: url(./assets/rock-paper.jpeg);"> 
-          </div>
-          <h3><a class="project-title" href="/rock-paper-scissor-master/rockpaperscissors.html" target="_blank" rel="noopener noreferrer"
-              >Rock Paper Scissors</a
-            >
-          </h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio tempore libero itaque facere! Dolorem id praesentium est deserunt exercitationem fuga.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-image"style="background-image: url(./assets/tictactoe.png);">  
-          </div>
-          <h3><a class="project-title" href="/Tic-Tac-Toe/tictactoe.html" target="_blank" rel="noopener noreferrer">Tic-Tac-Toe</a>
-          </h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio tempore libero itaque facere! Dolorem id praesentium est deserunt exercitationem fuga.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-image"
-          style="background-image: url(./assets/bank.jpeg);">
-        </div>
-        <h3><a class="project-title" href="/EasyBank-landing-page/EasyBank.html" target="_blank" rel="noopener noreferrer">EasyBank</a>
-        </h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio tempore libero itaque facere! Dolorem id praesentium est deserunt exercitationem fuga.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-image"
-          style="background-image: url(./assets/calculator.png);">
-        </div>
-        <h3><a class="project-title" href="/calculator/mycalculator.html" target="_blank" rel="noopener noreferrer">Calculator</a>
-        </h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio tempore libero itaque facere! Dolorem id praesentium est deserunt exercitationem fuga.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-image"
-          style="background-image: url(./assets/countdownimg.png);">
-        </div>
-        <h3><a class="project-title" href="./countdown.html" target="_blank" rel="noopener noreferrer">Simple countdown</a>
-        </h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio tempore libero itaque facere! Dolorem id praesentium est deserunt exercitationem fuga.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-image"
-          style="background-image: url(./assets/photo_2023-04-19_01-20-51.jpg);">
-        </div>
-        <h3><a class="project-title" href="/analogClock/clock.html" target="_blank" rel="noopener noreferrer">Analog Clock</a>
-        </h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio tempore libero itaque facere! Dolorem id praesentium est deserunt exercitationem fuga.</p>
-        </article>
+          <p>Ugbabe Owoicho Godwin</p>
         </div>
       </div>
     </section>
+
+    <section class="project-section obs">
+      <h2>My Projects</h2>
+      <p style="color: #232042; padding: 1.2rem">
+        Explore my impressive portfolio of web development projects, featuring
+        Rock Paper Scissors, Simple Countdown, Calculator, EasyBank Landing
+        Page, Tic Tac Toe game, and Analog Clock.
+      </p>
+      <div id="projects">
+        <!-- Project Articles -->
+        <!-- Rock Paper Scissors -->
+        <article class="project-card">
+          <a
+            class=""
+            target="_blank"
+            href="/rock-paper-scissor-master/rockpaperscissors.html"
+            rel="noopener noreferrer"
+          >
+            <div
+              class="project-image"
+              style="background-image: url(./assets/rock-paper.jpeg)"
+            ></div>
+            <h3>
+              <a
+                class="project-title"
+                href="/rock-paper-scissor-master/rockpaperscissors.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Rock Paper Scissors</a
+              >
+            </h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Distinctio tempore libero itaque facere! Dolorem id praesentium
+              est deserunt exercitationem fuga.
+            </p>
+          </a>
+        </article>
+        <!-- Tic-Tac-Toe -->
+        <article class="project-card">
+          <a
+            class=""
+            href="/Tic-Tac-Toe/tictactoe.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div
+              class="project-image"
+              style="background-image: url(./assets/tictactoe.png)"
+            ></div>
+            <h3>
+              <a
+                class="project-title"
+                href="/Tic-Tac-Toe/tictactoe.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Tic-Tac-Toe</a
+              >
+            </h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Distinctio tempore libero itaque facere! Dolorem id praesentium
+              est deserunt exercitationem fuga.
+            </p>
+          </a>
+        </article>
+        <!-- calculator -->
+        <article class="project-card">
+          <div
+            class="project-image"
+            style="background-image: url(./assets/calculator.png)"
+          ></div>
+          <h3>
+            <a
+              class="project-title"
+              href="/calculator/mycalculator.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Calculator</a
+            >
+          </h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio
+            tempore libero itaque facere! Dolorem id praesentium est deserunt
+            exercitationem fuga.
+          </p>
+        </article>
+        <!-- countdown -->
+        <article class="project-card">
+          <div
+            class="project-image"
+            style="background-image: url(./assets/countdownimg.png)"
+          ></div>
+          <h3>
+            <a
+              class="project-title"
+              href="./countdown.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Simple countdown</a
+            >
+          </h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio
+            tempore libero itaque facere! Dolorem id praesentium est deserunt
+            exercitationem fuga.
+          </p>
+        </article>
+        <!-- analog clock -->
+        <article class="project-card">
+          <div
+            class="project-image"
+            style="
+              background-image: url(./assets/photo_2023-04-19_01-20-51.jpg);
+            "
+          ></div>
+          <h3>
+            <a
+              class="project-title"
+              href="/analogClock/clock.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Analog Clock</a
+            >
+          </h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio
+            tempore libero itaque facere! Dolorem id praesentium est deserunt
+            exercitationem fuga.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <section id="contact" class="obs">
-      <h2>
-      Contact     
-     </h2>
+      <h2>Contact</h2>
       <div class="contact">
-        <div class="contact-label"> 
-          <h3 class="media-title">Social Media</h3> <p class="text">Here are my social media handles, let's link!</p>
-          <div class="media-icon ig"><img src="/portf/assets/icon-instagram.svg" alt="instagram-logo " srcset=""><p class="cta">Let's connect on 📸 Instagram!</p></div>
-          <div class="media-icon twitter"><img src="/portf/assets/icon-twitter.svg" alt="" srcset=""><p class="cta">Follow me on 📸 Twitter</p></div>
-          <div class="media-icon whatsapp"><i class="fab fa-whatsapp-square"></i> <p class="cta">Connect with me on </p></div>
-          
+        <div class="contact-label">
+          <h3 class="media-title">Social Media</h3>
+          <p class="text">Here are my social media handles, let's link up!</p>
+          <!-- Add social media icons -->
+          <div class="media-icon ig">
+            <img
+              src="/assets/icon-instagram.svg"
+              alt="instagram-logo "
+              srcset=""
+            />
+            <p class="cta">Let's connect on 📸 Instagram!</p>
+          </div>
+          <div class="media-icon twitter">
+            <img src="/assets/icon-twitter.svg" alt="" srcset="" />
+            <p class="cta">Follow me on 📸 Twitter</p>
+          </div>
+          <div class="media-icon whatsapp">
+            <i class="fab fa-whatsapp-square"></i>
+            <p class="cta">Connect with me on whatsapp</p>
+          </div>
         </div>
         <div class="contact-form">
           <form action="" class="contact-form">
             <div class="user-name">
-  
-              <label for="user-name"><i class="fa fa-person-arrow-down-to-line"></i>
-              </label>
-              <input type="text" name="user name" id="user-name" placeholder="John Doe">
+              <label for="user-name"
+                ><i class="fa fa-person-arrow-down-to-line"></i
+              ></label>
+              <input
+                type="text"
+                name="user name"
+                id="user-name"
+                placeholder="John Doe"
+              />
             </div>
             <div class="phone">
-  
-              <label for="phonenumber">  <i class="fa fa-phone"></i> </label>
-              <input type="tel" name="phone number" id="phonenumber" placeholder="012345678">
+              <label for="phonenumber"><i class="fa fa-phone"></i></label>
+              <input
+                type="tel"
+                name="phone number"
+                id="phonenumber"
+                placeholder="012345678"
+              />
             </div>
             <div class="email">
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="@example.com">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="@example.com"
+              />
             </div>
           </form>
           <button type="submit" class="submit-btn">Submit</button>
         </div>
       </div>
-     
     </section>
-    <footer class="footer">
-      <div class="copyright">&copy;  all rights reserved 2023</div>
 
+    <footer class="footer">
+      <div class="copyright">&copy; all rights reserved 2023</div>
     </footer>
   </body>
 </html>

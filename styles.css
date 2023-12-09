@@ -10,17 +10,17 @@
 
 /* Header and nav styling */
 header {
-  height: 7vh;
+  height: 7dvh;
   width: 100%;
+  top: 0;
+  margin-bottom: 2rem;
   z-index: 5;
+  background-color: #232042;
   padding: 1rem;
-  background-color: rgb(40, 39, 39);
   position: fixed;
 
   /* Styling for navigation list */
-  & .nav-list[data-visible="true"] {
-    transform: translateX(100%);
-  }
+
   & .nav-list {
     display: flex;
     justify-content: space-around;
@@ -34,39 +34,49 @@ header {
       text-decoration: none;
       list-style: none;
     }
-
+  @media (width <= 38.5625rem) {
+      display: none;
+    }
     /* Hover effect on list items and links */
     & :hover {
       color: rgb(255, 89, 0);
-      transform: scale(1.2);
-      padding-bottom: 0.9rem;
+      padding-bottom: 0.3rem;
       border-bottom: 2px solid rgb(255, 89, 0);
       transition: color 350ms ease-in-out;
     }
+  }
+  .nav-list-mobile {
+    position: relative;
+    height: 93vh;
+    z-index: 10;
 
-    /* Media query for smaller screens */
-    @media (width <= 38.5625rem) {
-      position: relative;
-      height: 93vh;
-      z-index: 10;
-      flex-direction: column;
-      align-items: start;
-      gap: 2rem;
-      inset: 0 0 0 20%;
-      padding: min(20vh, 10rem) 2.5rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: hsl(0 0% 0% / 0.71);
+    inset: 0 0 0 20%;
+    padding: min(20vh, 10rem) 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: hsl(0 0% 0% / 0.71);
+    backdrop-filter: blur(2rem);
+    transform: translateX(100%);
+
+    flex-direction: column;
+    align-items: start;
+    display: flex;
+    justify-content: space-around;
+
+    & li,
+    & a {
+      transition: color 200ms ease-in-out;
+      color: rgb(224, 220, 220);
+      text-decoration: none;
+      list-style: none;
+    }
+   
+    /* Support for backdrop filter */
+    @supports (backdrop-filter: blur(1rem)) {
+      background: hsl(0 0% 100% / 0.1);
       backdrop-filter: blur(2rem);
-
-      /* Support for backdrop filter */
-      @supports (backdrop-filter: blur(1rem)) {
-        background: hsl(0 0% 100% / 0.1);
-        backdrop-filter: blur(2rem);
-      }
     }
   }
-
   /* Hamburger menu styles */
   & .hamburger {
     position: absolute;
@@ -76,18 +86,17 @@ header {
     color: rgb(224, 220, 220);
     cursor: pointer;
     border: none;
+    background: none;
+    backdrop-filter: blur(2rem);
     transition: all 200ms;
     z-index: 11;
-
-    /* Hover effect on hamburger icon */
-    & :hover {
-      background-color: #232042;
-      color: rgb(224, 220, 220);
-      transform: scale(1.2);
+    /* Support for backdrop filter */
+    @supports (backdrop-filter: blur(1rem)) {
+      background: none;
+      backdrop-filter: blur(2rem);
     }
 
     #hamburger-icon {
-      background-color: rgb(3, 3, 27);
       height: 1.5rem;
     }
 
@@ -104,7 +113,7 @@ header {
   padding: 2rem;
 
   & h2 {
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
     text-align: center;
     color: antiquewhite;
   }
@@ -129,7 +138,7 @@ header {
       background-image: url(./assets/IMG_20210715_044336_768.jpg);
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: center;
       border-radius: 4px;
       width: 100%;
       min-height: 30rem;
@@ -161,15 +170,10 @@ header {
   /* Styling for the projects grid */
   #projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
     padding: 2rem;
     justify-content: center;
-
-    /* Hover effect on project links */
-    & a:hover {
-      color: #232042;
-    }
 
     /* Styling for project titles */
     & .project-title {
@@ -188,9 +192,8 @@ header {
       height: 12.5rem;
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center center;
-      border-radius: 3px;
-      margin-bottom: 0.8rem;
+      background-position: center;
+      border-radius: 4px;
     }
 
     /* Styling for project card paragraphs */
@@ -200,14 +203,12 @@ header {
       text-align: left;
       color: #868686;
       font-size: 0.8rem;
-      text-align: center;
       padding-bottom: 2rem;
     }
 
     /* Styling for project cards */
     & .project-card {
       border-radius: 0.312rem;
-      overflow: hidden;
       background-color: #fff;
       box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
     }
@@ -216,7 +217,6 @@ header {
   /* Hover effect on project cards */
   .project-card:hover {
     transform: translateY(0.5rem);
-    box-shadow: 4px 4px 14px #000;
   }
 }
 
@@ -233,10 +233,9 @@ header {
   /* Styling for the contact content */
   .contact {
     padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
-    gap: 2rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
 
     /* Media query for smaller screens */
     @media (width <= 38.6528rem) {
@@ -252,43 +251,43 @@ header {
       place-items: center;
       gap: 1rem;
       color: azure;
-      background-color: rgb(49, 4, 4);
+      background-color: rgb(42, 174, 219);
       border-radius: 14px;
 
       /* Styling for the media titles */
       .media-title {
-        place-self: center;
         grid-area: header;
       }
       .text {
-        place-self: center;
         padding: 8px;
         grid-area: text;
       }
       /* Styling for the Instagram icon */
       .ig {
-        place-self: center;
         grid-area: ig;
       }
 
       /* Styling for the Twitter icon */
       .twitter {
-        place-self: center;
         grid-area: twitter;
       }
 
       /* Styling for the WhatsApp icon */
       .whatsapp {
-        place-self: center;
         grid-area: whatsapp;
       }
     }
 
     /* Hover effect on media icons */
+
     .media-icon:hover {
       transform: scale(1.3);
     }
-
+    .media-icon {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
     /* Hover effect on media titles and icons */
     & .media-title,
     & .ig,
