@@ -1,31 +1,29 @@
-const _$ = (x) => document.querySelector(x),
-  $$ = (x) => document.querySelectorAll(x),
-  hamburgerIcon = _$("#hamburger-icon"),
-  body = _$(".body"),
-  hamburger = _$(".hamburger"),
-  navLinks = $$("#navlinks"),
-  navList = _$(".nav-list-mobile"),
-  isVisible = navList.dataset.visible === "true";
+const $ = (x) => {
+    const elements = document.querySelectorAll(x);
+    return elements.length === 1 ? elements[0] : elements;
+  },
+  hamburgerIcon = $("#hamburger-icon"),
+  body = $(".body"),
+  hamburger = $(".hamburger"),
+  navList = $(".nav-list-mobile");
 
 hamburger.addEventListener("click", () => {
+  isVisible = navList.dataset.visible === "true";
   navList.dataset.visible = !isVisible;
   hamburger.setAttribute("aria-expanded", !isVisible);
   body.classList.toggle("no-scroll");
-  hamburgerIcon.classList.replace(
-    isVisible ? "fa-x" : "fa-bars",
-    isVisible ? "fa-bars" : "fa-x"
-  );
-
   navList.style.transform = isVisible ? "translateX(100%)" : "translateX(0%)";
 });
 const closeSidebar = () => {
-  navList.dataset.visible = !isVisible;
-  hamburger.setAttribute("aria-expanded", !isVisible);
+  navList.dataset.visible = false;
+  hamburger.setAttribute("aria-expanded", false);
   navList.style.transform = "translateX(100%)";
   body.classList.remove("no-scroll");
-}; //fix this code asap
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => closeSidebar())//edit the function check if navList is display flex direction column;
+};
+navList.addEventListener("click", (event) => {
+  if (event.target.closest("#navlinks")) {
+    closeSidebar();
+  }
 });
 
 // intersection observer
@@ -37,12 +35,11 @@ const pageEffect = (element) => {
         let target = entry.target;
 
         target.classList.add("slideUp");
-        // observer.disconnect();
+        observer.disconnect();
       }
     });
   }, options);
   io.observe(element);
 };
-let sections = $$(".obs");
-// console.log(sections);
+const sections = $(".obs");
 sections.forEach((section) => pageEffect(section));
