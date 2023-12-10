@@ -47,9 +47,8 @@ header {
   }
   .nav-list-mobile {
     position: relative;
-    height: 93vh;
+    height: 100dvh;
     z-index: 10;
-
     inset: 0 0 0 20%;
     padding: min(20vh, 10rem) 2.5rem;
     font-size: 1.5rem;
@@ -57,10 +56,9 @@ header {
     background: hsl(0 0% 0% / 0.71);
     backdrop-filter: blur(2rem);
     transform: translateX(100%);
-
+    display: flex;
     flex-direction: column;
     align-items: start;
-    display: flex;
     justify-content: space-around;
 
     & li,
@@ -105,10 +103,12 @@ header {
       display: none;
     }
   }
-} 
-.sideMenu{ @media (width >= 38.5625rem) {
-  display: none;
-}}
+}
+.sideMenu {
+  @media (width >= 38.5625rem) {
+    display: none;
+  }
+}
 /* About section styles */
 .about-section {
   background-color: #232042;
@@ -349,16 +349,7 @@ header {
   background-color: #232042;
 }
 
-/* Utility class */
-.no-scroll {
-  height: 100%;
-  overflow: hidden;
-}
 
-/* Slide-up animation */
-.slideUp {
-  animation: slideUp 1s ease-in-out forwards;
-}
 
 /* Media queries */
 @media (width <= 38.5625rem) {
@@ -439,4 +430,13 @@ header {
     transform: translateY(0%);
     filter: blur(0px);
   }
+}
+/* Utility class */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Slide-up animation */
+.slideUp {
+  animation: slideUp 1s ease-in-out forwards;
 }
