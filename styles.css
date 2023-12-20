@@ -436,7 +436,7 @@ a:hover {
   padding-top: 1rem;
 }
 .opacity {
-  opacity: 0;
+  display: none;
 }
 
 /* Slide-up animation */
