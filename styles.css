@@ -95,6 +95,10 @@ a:hover {
   cursor: pointer;
   backdrop-filter: blur(2rem);
   height: 1.2rem;
+  @supports (backdrop-filter: blur(1rem)) {
+    background: none;
+    backdrop-filter: blur(2rem);
+  }
 }
 
 /* About section styles */
@@ -432,7 +436,8 @@ a:hover {
   padding-top: 1rem;
 }
 .opacity {
-opacity: 0;}
+  opacity: 0;
+}
 
 /* Slide-up animation */
 .slideUp {
