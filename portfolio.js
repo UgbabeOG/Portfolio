@@ -10,6 +10,7 @@ const $ = (x) => {
 hamburger.addEventListener("click", () => {
   isVisible = navList.dataset.visible === "true";
   navList.dataset.visible = !isVisible;
+  hamburger.classList.add("opacity");
   hamburger.setAttribute("aria-expanded", !isVisible);
   body.classList.toggle("no-scroll");
   navList.style.transform = isVisible ? "translateX(100%)" : "translateX(0%)";
@@ -17,6 +18,7 @@ hamburger.addEventListener("click", () => {
 const closeSidebar = () => {
   navList.dataset.visible = false;
   hamburger.setAttribute("aria-expanded", false);
+  hamburger.classList.remove("opacity");
   navList.style.transform = "translateX(100%)";
   body.classList.remove("no-scroll");
 };

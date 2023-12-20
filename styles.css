@@ -89,6 +89,13 @@ a:hover {
 #hamburger-icon {
   height: 1.2rem;
 }
+.x {
+  background-color: #232042;
+  color: rgb(224, 220, 220);
+  cursor: pointer;
+  backdrop-filter: blur(2rem);
+  height: 1.2rem;
+}
 
 /* About section styles */
 .about-section {
@@ -424,6 +431,8 @@ a:hover {
 .c {
   padding-top: 1rem;
 }
+.opacity {
+opacity: 0;}
 
 /* Slide-up animation */
 .slideUp {
