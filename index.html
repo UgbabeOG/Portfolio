@@ -30,7 +30,7 @@
   </head>
 
   <body class="body">
-    <header>
+    <header class="header">
       <nav>
         <button
           class="hamburger"
@@ -103,7 +103,8 @@
               >
             </h3>
             <p>
-              A classic game of Rock Paper Scissors implemented in HTML, CSS, and JavaScript. Play against the computer and test your luck!
+              A classic game of Rock Paper Scissors implemented in HTML, CSS,
+              and JavaScript. Play against the computer and test your luck!
             </p>
           </a>
         </article>
@@ -129,7 +130,8 @@
               >
             </h3>
             <p>
-              The timeless Tic-Tac-Toe game built using HTML, CSS, and JavaScript. Challenge a friend or play against an AI!
+              The timeless Tic-Tac-Toe game built using HTML, CSS, and
+              JavaScript. Challenge a friend or play against an AI!
             </p>
           </a>
         </article>
@@ -155,7 +157,8 @@
               >
             </h3>
             <p>
-              A web-based calculator designed using HTML, CSS, and JavaScript. Perform basic arithmetic operations conveniently.
+              A web-based calculator designed using HTML, CSS, and JavaScript.
+              Perform basic arithmetic operations conveniently.
             </p></a
           >
         </article>
@@ -208,7 +211,8 @@
               >
             </h3>
             <p>
-              A countdown timer built with HTML, CSS, and JavaScript. Set timers for various events or occasions!
+              A countdown timer built with HTML, CSS, and JavaScript. Set timers
+              for various events or occasions!
             </p></a
           >
         </article>
@@ -265,7 +269,8 @@
               >
             </h3>
             <p>
-             Find different recipes and ingredients for your next meal. made with React.js and Edamam recipe finder API
+              Find different recipes and ingredients for your next meal. made
+              with React.js and Edamam recipe finder API
             </p></a
           >
         </article>
@@ -293,7 +298,8 @@
               >
             </h3>
             <p>
-              Image finder made with React.js and Unsplash API. search and download different photos!
+              Image finder made with React.js and Unsplash API. search and
+              download different photos!
             </p></a
           >
         </article>
@@ -302,26 +308,31 @@
 
     <section id="contact" class="obs">
       <h2>GET IN TOUCH</h2>
+      <p class="c">
+        Please, contact me for job offers and coding tips, Thank you!
+      </p>
       <div class="contact">
         <div class="contact-label">
           <h3 class="media-title">Social Media</h3>
           <p class="text">Here are my social media handles, let's link up!</p>
           <!-- Add social media icons -->
           <div class="media-icon ig">
-            <img
-              src="/assets/icon-instagram.svg"
-              alt="instagram-logo "
-              srcset=""
-            />
+            <i class="fab fa-instagram scale"></i>
+
             <p class="cta">Let's connect on 📸 Instagram!</p>
           </div>
           <div class="media-icon twitter">
-            <img src="/assets/icon-twitter.svg" alt="" srcset="" />
-            <p class="cta">Follow me on 📸 Twitter</p>
+            <i class="fab fa-twitter scale"></i>
+            <a
+              href="https://twitter.com/Chocothe1st"
+              target="_blank"
+              class="cta"
+              >Follow me on 📸 Twitter</a
+            >
           </div>
           <div class="media-icon whatsapp">
-            <i class="fab fa-whatsapp-square"></i>
-            <p class="cta">Connect with me on whatsapp</p>
+            <i class="fab fa-whatsapp scale"></i>
+            <a href="#" class="cta">Connect with me on whatsapp</a>
           </div>
         </div>
         <div class="contact-form">
@@ -347,13 +358,12 @@
               />
             </div>
             <div class="email">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                name="email"
+              <label for="message">Your Message</label>
+              <textarea
+                type="text"
+                name="message"
                 id="email"
-                placeholder="@example.com"
-              />
+              ></textarea>
             </div>
           </form>
           <button type="submit" class="submit-btn">Submit</button>

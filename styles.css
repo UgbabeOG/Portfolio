@@ -9,153 +9,134 @@
 }
 
 /* Header and nav styling */
-header {
+.header {
   height: 7dvh;
   width: 100%;
-  top: 0;
+  top: 0%;
   margin-bottom: 2rem;
   z-index: 5;
   background-color: #232042;
   padding: 1rem;
   position: fixed;
+}
 
-  /* Styling for navigation list */
+/* Styling for navigation list */
 
-  & .nav-list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.header .nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-    /* Styling for list items and links in navigation */
-    & li,
-    & a {
-      transition: color 200ms ease-in-out;
-      color: rgb(224, 220, 220);
-      text-decoration: none;
-      list-style: none;
-    }
-    @media (width <= 38.5625rem) {
-      display: none;
-    }
-    /* Hover effect on list items and links */
-    & :hover {
-      color: rgb(255, 89, 0);
-      padding-bottom: 0.3rem;
-      border-bottom: 2px solid rgb(255, 89, 0);
-      transition: color 350ms ease-in-out;
-    }
-  }
-  .nav-list-mobile {
-    position: relative;
-    height: 100dvh;
-    z-index: 10;
-    inset: 0 0 0 20%;
-    padding: min(20vh, 10rem) 2.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: hsl(0 0% 0% / 0.71);
-    backdrop-filter: blur(2rem);
-    transform: translateX(100%);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-around;
+/* Styling for list items and links in navigation */
+.nav-list,
+.nav-list-mobile li,
+a {
+  color: rgb(224, 220, 220);
+  text-decoration: none;
+  list-style: none;
+}
 
-    & li,
-    & a {
-      transition: color 200ms ease-in-out;
-      color: rgb(224, 220, 220);
-      text-decoration: none;
-      list-style: none;
-    }
-
-    /* Support for backdrop filter */
-    @supports (backdrop-filter: blur(1rem)) {
+/* Hover effect on list items and links */
+.nav-list,
+.nav-list-mobile li,
+a:hover {
+  color: rgb(7, 176, 254);
+  transition: color 350ms ease-in-out;
+}
+.nav-list-mobile {
+  position: relative;
+  height: 100dvh;
+  z-index: 10;
+  inset: 0 0 0 20%;
+  padding: min(20vh, 10rem) 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: hsl(0 0% 0% / 0.71);
+  backdrop-filter: blur(2rem);
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around; /* Support for backdrop filter */
+  @supports (backdrop-filter: blur(1rem)) {
+    .nav-list-mobile {
       background: hsl(0 0% 100% / 0.1);
       backdrop-filter: blur(2rem);
     }
   }
-  /* Hamburger menu styles */
-  & .hamburger {
-    position: absolute;
-    left: 90%;
-    display: block;
-    background-color: #232042;
-    color: rgb(224, 220, 220);
-    cursor: pointer;
-    border: none;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  position: absolute;
+  left: 90%;
+  background-color: #232042;
+  color: rgb(224, 220, 220);
+  cursor: pointer;
+  border: none;
+  background: none;
+  backdrop-filter: blur(2rem);
+  transition: all 200ms;
+  z-index: 11;
+  /* Support for backdrop filter */
+  @supports (backdrop-filter: blur(1rem)) {
     background: none;
     backdrop-filter: blur(2rem);
-    transition: all 200ms;
-    z-index: 11;
-    /* Support for backdrop filter */
-    @supports (backdrop-filter: blur(1rem)) {
-      background: none;
-      backdrop-filter: blur(2rem);
-    }
-
-    #hamburger-icon {
-      height: 1.5rem;
-    }
-
-    /* Media query for larger screens */
-    @media (width >= 38.5625rem) {
-      display: none;
-    }
   }
 }
-.sideMenu {
-  @media (width >= 38.5625rem) {
-    display: none;
-  }
+
+#hamburger-icon {
+  height: 1.2rem;
 }
+
 /* About section styles */
 .about-section {
   background-color: #232042;
   padding: 2rem;
+}
 
-  & h2 {
-    margin-top: 1.5rem;
-    text-align: center;
-    color: antiquewhite;
-  }
+.about-section h2 {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: antiquewhite;
+}
 
-  /* Styling for the "about" content */
-  #about {
-    height: 90vh;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
+/* Styling for the "about" content */
+#about {
+  height: 90vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
 
-    & h2 {
-      text-align: center;
-      padding-top: 1.5rem;
-    }
+#about h2 {
+  text-align: center;
+  padding-top: 1.5rem;
+}
 
-    /* Styling for the author image */
-    & .author-image {
-      flex: 3;
-      order: 1;
-      background-image: url(./assets/IMG_20210715_044336_768.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      border-radius: 4px;
-      width: 100%;
-      min-height: 30rem;
-    }
+/* Styling for the author image */
+.author-image {
+  flex: 3;
+  order: 1;
+  background-image: url(./assets/IMG_20210715_044336_768.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 30rem;
+}
 
-    /* Styling for the about text */
-    & .about-text {
-      color: antiquewhite;
-      flex: 2;
-      order: 2;
-      text-align: center;
-      line-height: 1.5;
-    }
-  }
+/* Styling for the about text */
+.about-text {
+  color: antiquewhite;
+  flex: 2;
+  order: 2;
+  text-align: center;
+  line-height: 1.5;
 }
 
 /* Project article section styles */
@@ -163,64 +144,64 @@ header {
   background-color: #f2f2f2;
   transition: all 200ms ease-in-out;
   padding: 2rem;
+}
 
-  & h2 {
-    color: #232042;
-    text-align: center;
-    padding-top: 1.5rem;
-  }
+.project-section h2 {
+  color: #232042;
+  text-align: center;
+  padding-top: 1.5rem;
+}
 
-  /* Styling for the projects grid */
-  #projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-    justify-content: center;
+/* Styling for the projects grid */
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-content: center;
+}
 
-    /* Styling for project titles */
-    & .project-title {
-      display: block;
-      padding: 0.5rem;
-      margin: 0.5rem;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-align: center;
-      color: #232042;
-      text-decoration: none;
-    }
+/* Styling for project titles */
+.project-title {
+  display: block;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  color: #232042;
+  text-decoration: none;
+}
 
-    /* Styling for project images */
-    & .project-image {
-      height: 12.5rem;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      border-radius: 4px;
-    }
+/* Styling for project images */
+.project-image {
+  height: 12.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+}
 
-    /* Styling for project card paragraphs */
-    & .project-card p {
-      padding: 0.5rem 1rem;
-      line-height: 1.5;
-      text-align: left;
-      color: #868686;
-      font-size: 0.8rem;
-      padding-bottom: 2rem;
-    }
+/* Styling for project card paragraphs */
+.project-card p {
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  text-align: left;
+  color: #868686;
+  font-size: 0.8rem;
+  padding-bottom: 2rem;
+}
 
-    /* Styling for project cards */
-    & .project-card {
-      border-radius: 0.312rem;
-      background-color: #fff;
-      box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
-    }
-  }
+/* Styling for project cards */
+.project-card {
+  border-radius: 0.312rem;
+  background-color: #fff;
+  box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
+}
 
-  /* Hover effect on project cards */
-  .project-card:hover {
-    transform: translateY(0.5rem);
-  }
+/* Hover effect on project cards */
+.project-card:hover {
+  transform: translateY(0.5rem);
 }
 
 /* Contact section styles */
@@ -228,119 +209,111 @@ header {
   padding: 2rem;
   background-color: #232042;
   color: antiquewhite;
-
-  & h2 {
-    text-align: center;
-  }
-
-  /* Styling for the contact content */
-  .contact {
-    padding: 2rem;
-    display: flex;
-    justify-content: space-around;
-    gap: 3rem;
-
-    /* Media query for smaller screens */
-    @media (width <= 38.6528rem) {
-      flex-direction: column;
-    }
-
-    /* Styling for the contact labels and icons */
-    & .contact-label {
-      padding: 1rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "header header header" "text text text" "ig twitter whatsapp";
-      place-items: center;
-      gap: 1rem;
-      color: azure;
-      background-color: rgb(42, 174, 219);
-      border-radius: 14px;
-
-      /* Styling for the media titles */
-      .media-title {
-        grid-area: header;
-      }
-      .text {
-        padding: 8px;
-        grid-area: text;
-      }
-      /* Styling for the Instagram icon */
-      .ig {
-        grid-area: ig;
-      }
-
-      /* Styling for the Twitter icon */
-      .twitter {
-        grid-area: twitter;
-      }
-
-      /* Styling for the WhatsApp icon */
-      .whatsapp {
-        grid-area: whatsapp;
-      }
-    }
-
-    /* Hover effect on media icons */
-
-    .media-icon:hover {
-      transform: scale(1.3);
-    }
-    .media-icon {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    /* Hover effect on media titles and icons */
-    & .media-title,
-    & .ig,
-    & .twitter.whatsapp :hover {
-      box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
-    }
-
-    /* Styling for the contact form */
-    & .contact-form {
-      display: flex;
-      flex-direction: column;
-      justify-self: end;
-      gap: 1.5rem;
-
-      /* Styling for input fields */
-      & input {
-        padding-left: 0.8rem;
-        border: 0.8px solid #232042;
-        border-top: 0px;
-      }
-
-      /* Styling for the placeholder in input fields */
-      .contact-form input:focus ::placeholder {
-        color: transparent;
-      }
-
-      /* Styling for the submit button */
-      .submit-btn {
-        width: 6rem;
-        cursor: pointer;
-        padding: 0.6rem;
-        border: none;
-        border-radius: 4px;
-        background-color: rgb(49, 4, 4);
-        color: aliceblue;
-      }
-
-      /* Hover effect on the submit button */
-      & .submit-btn:hover {
-        background-color: rgb(0, 187, 255);
-      }
-    }
-  }
+  border-bottom: 0.5px solid #ffffff;
 }
-.cta {
-  line-height: 0.5;
-  font-size: 0.5rem;
+
+#contact h2 {
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid #ffffff;
   text-align: center;
 }
+#contact p {
+  text-align: left;
+}
+
+/* Styling for the contact content */
+.contact {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+}
+
+/* Styling for the contact labels and icons */
+.contact-label {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "header header header" "text text text" "ig twitter whatsapp";
+  place-items: center;
+  gap: 1rem;
+  color: azure;
+  background-color: rgb(42, 174, 219);
+  border-radius: 14px;
+}
+
+/* Styling for the media titles */
+.media-title {
+  grid-area: header;
+}
+.text {
+  padding: 8px;
+  grid-area: text;
+}
+/* Styling for the Instagram icon */
+.ig {
+  grid-area: ig;
+}
+
+/* Styling for the Twitter icon */
+.twitter {
+  grid-area: twitter;
+}
+
+/* Styling for the WhatsApp icon */
+.whatsapp {
+  grid-area: whatsapp;
+}
+
+.media-icon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cta {
+  line-height: 1;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+/* Styling for the contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-self: end;
+  gap: 1.5rem;
+}
+
+/* Styling for input fields */
+.contact-form input {
+  padding-left: 0.8rem;
+  border: 0.8px solid #232042;
+  border-top: 0px;
+}
+
+/* Styling for the placeholder in input fields */
+.contact-form input:focus ::placeholder {
+  color: transparent;
+}
+
+/* Styling for the submit button */
+.submit-btn {
+  width: 6rem;
+  cursor: pointer;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(49, 4, 4);
+  box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
+  color: aliceblue;
+}
+
+/* Hover effect on the submit button */
+.submit-btn:hover {
+  background-color: rgb(0, 187, 255);
+}
+
 /* Footer section styles */
 .footer {
   padding: 0.625rem;
@@ -349,10 +322,19 @@ header {
   background-color: #232042;
 }
 
-
-
 /* Media queries */
+@media (width >= 38.5625rem) {
+  .hamburger {
+    display: none;
+  }
+  .sideMenu {
+    display: none;
+  }
+}
 @media (width <= 38.5625rem) {
+  .header .nav-list {
+    display: none;
+  }
   /* Styling for "about" and "projects" sections on smaller screens */
   #about,
   #projects {
@@ -362,59 +344,60 @@ header {
   /* Styling for the "about" section on smaller screens */
   .about-section {
     padding: 1rem;
+  }
 
-    /* Styling for the "about" content on smaller screens */
-    #about {
-      padding: 1rem;
-      flex-direction: column;
-      align-items: center;
-
-      & .author-image {
-        min-height: 12.5rem;
-        margin-bottom: 1rem;
-      }
-    }
+  /* Styling for the "about" content on smaller screens */
+  #about {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .author-image {
+    min-height: 12.5rem;
+    margin-bottom: 1rem;
   }
 
   /* Styling for the "project" section on smaller screens */
   .project-section {
     padding: 1rem;
+  }
 
-    /* Styling for the projects grid on smaller screens */
-    #projects {
-      padding: 1rem;
+  /* Styling for the projects grid on smaller screens */
+  #projects {
+    padding: 1rem;
+  }
 
-      & .project-title {
-        font-size: 1.2rem;
-      }
+  .project-title {
+    font-size: 1.2rem;
+  }
 
-      & .project-image {
-        height: 9rem;
-        margin-bottom: 0.6rem;
-      }
+  .project-image {
+    height: 9rem;
+    margin-bottom: 0.6rem;
+  }
 
-      & .project-card p {
-        font-size: 0.9rem;
-      }
-    }
+  .project-card p {
+    font-size: 0.9rem;
   }
 
   /* Styling for the "contact" section on smaller screens */
   #contact {
     padding: 1rem;
+  }
 
-    & .contact {
-      padding: 1rem;
+  .contact {
+    padding: 1rem;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact-form input {
+    font-size: 0.9rem;
+  }
 
-      & .contact-form input {
-        font-size: 0.9rem;
-      }
-
-      & .submit-btn {
-        width: 4rem;
-        font-size: 0.9rem;
-      }
-    }
+  #contact .submit-btn {
+    width: 4rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -431,9 +414,15 @@ header {
     filter: blur(0px);
   }
 }
-/* Utility class */
+/* Utility classes */
 .no-scroll {
   overflow: hidden;
+}
+.scale {
+  transform: scale(1rem);
+}
+.c {
+  padding-top: 1rem;
 }
 
 /* Slide-up animation */
