@@ -5,7 +5,7 @@ const $ = (x) => {
   hamburgerIcon = $("#hamburger-icon"),
   body = $(".body"),
   hamburger = $(".hamburger"),
-  navList = $(".nav-list-mobile");
+  navList = $(".mobileNav");
 
 hamburger.addEventListener("click", () => {
   isVisible = navList.dataset.visible === "true";
@@ -51,9 +51,7 @@ function slideTools(direction = "forward") {
   }, 300);
 }
 
-// Start the carousel with an initial delay
-setTimeout(slideTools("forward"), 100);
-
+slideTools();
 // Set up an interval to automatically rotate the asides
 setInterval(slideTools("forward"), 300); // Adjust interval as needed
 

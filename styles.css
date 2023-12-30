@@ -47,6 +47,9 @@ a:hover {
   color: rgb(7, 176, 254);
   transition: color 350ms ease-in-out;
 }
+.mobileNav {
+  transform: translateX(100%);
+}
 .nav-list-mobile {
   position: relative;
   height: 100dvh;
@@ -57,7 +60,6 @@ a:hover {
   font-weight: bold;
   background: hsl(0 0% 0% / 0.71);
   backdrop-filter: blur(2rem);
-  transform: translateX(100%);
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -184,6 +186,9 @@ a:hover {
 }
 #nxtbtn,
 #prevbtn {
+  background: none;
+  width: 1.2rem;
+  border: none;
   cursor: pointer;
 }
 /* Project article section styles */
@@ -265,7 +270,7 @@ a:hover {
   text-align: center;
 }
 #contact p {
-  text-align: left;
+  text-align: center;
 }
 
 /* Styling for the contact content */
@@ -379,9 +384,11 @@ a:hover {
   }
 }
 @media (width <= 38.5625rem) {
-  .header .nav-list {
+  .header .nav-list,
+  .desktopnav {
     display: none;
   }
+  
   /* Styling for "about" and "projects" sections on smaller screens */
   #about,
   #projects {
@@ -402,6 +409,11 @@ a:hover {
   .author-image {
     min-height: 12.5rem;
     margin-bottom: 1rem;
+  }
+  /* styling the skillset section*/
+
+  .skill {
+    transform: scale(2);
   }
 
   /* Styling for the "project" section on smaller screens */
@@ -472,6 +484,7 @@ a:hover {
   padding-top: 1rem;
 }
 .opacity {
+  opacity: 0;
   display: none;
 }
 .mb {

@@ -31,27 +31,28 @@
 
   <body class="body">
     <header class="header">
-      <nav>
-        <button
-          class="hamburger"
-          aria-controls="navigation"
-          aria-expanded="false"
-        >
-          <i id="hamburger-icon" class="fa fa-bars"></i>
-        </button>
+      <button
+        class="hamburger"
+        aria-controls="navigation"
+        aria-expanded="false"
+      >
+        <i id="hamburger-icon" class="fa fa-bars"></i>
+      </button>
+      <nav class="desktopnav">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <aside class="sideMenu">
-          <ul class="nav-list-mobile" id="navigation" data-visible="false">
-            <i id="navlinks" class="fa fa-x x"></i>
-            <li id="navlinks"><a href="#about">About</a></li>
-            <li id="navlinks"><a href="#projects">Projects</a></li>
-            <li id="navlinks"><a href="#contact">Contact</a></li>
-          </ul>
-        </aside>
+      </nav>
+      <!--mobile menu-->
+      <nav class="mobileNav">
+        <ul class="nav-list-mobile" id="navigation" data-visible="false">
+          <i id="navlinks" class="fa fa-x x"></i>
+          <li id="navlinks"><a href="#about">About</a></li>
+          <li id="navlinks"><a href="#projects">Projects</a></li>
+          <li id="navlinks"><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -75,7 +76,7 @@
       <h2>Tech Toolbox</h2>
       <p class="mb">Toolbox Open Sesame! My arsenal of programming prowess.</p>
       <div class="tools">
-        <buttton id="prevbtn"><i class="fa fa-chevron-left"></i></buttton>
+        <button id="prevbtn"><i class="fa fa-chevron-left"></i></button>
         <aside class="tool"><i class="fab skill fa-html5">HTML5</i> </aside>
         <aside class="tool"><i class="fab skill fa-css3">CSS3</i> </aside>
         <aside class="tool">
@@ -93,7 +94,7 @@
         <aside class="tool">
           <i class="fab skill fa-github-square">GitHub</i> 
         </aside>
-        <buttton id="nxtbtn"><i class="fa fa-chevron-right"></i></buttton>
+        <button id="nxtbtn"><i class="fa fa-chevron-right"></i></button>
       </div>
     </section>
     <section class="project-section">
