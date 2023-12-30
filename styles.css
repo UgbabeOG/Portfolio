@@ -75,6 +75,7 @@ a:hover {
 /* Hamburger menu styles */
 .hamburger {
   position: absolute;
+  top: 2%;
   left: 90%;
   background-color: #232042;
   color: rgb(224, 220, 220);
@@ -92,7 +93,7 @@ a:hover {
 }
 
 #hamburger-icon {
-  height: 1.2rem;
+  height: 1rem;
 }
 .x {
   background-color: #232042;
@@ -388,7 +389,7 @@ a:hover {
   .desktopnav {
     display: none;
   }
-  
+
   /* Styling for "about" and "projects" sections on smaller screens */
   #about,
   #projects {
@@ -491,6 +492,7 @@ a:hover {
   margin-bottom: 1rem;
 }
 .active {
+  transform: scale(1.3);
   color: crimson;
 }
 /* Slide-up animation */

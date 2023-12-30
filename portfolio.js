@@ -41,26 +41,19 @@ function slideTools(direction = "forward") {
       : (currentTool - 1 + toolsLength) % toolsLength;
 
   tools[previousAside].classList.remove("active");
-  tools[previousAside].style.transform = "scale(1)"; // Reset previous aside
 
   tools[currentTool].classList.add("active");
-  tools[currentTool].style.transform = "scale(1.1)"; // Apply initial scaling
-
-  setTimeout(() => {
-    tools[currentTool].style.transform = "scale(1)"; // Smooth transition
-  }, 300);
 }
 
-slideTools();
 // Set up an interval to automatically rotate the asides
-setInterval(slideTools("forward"), 300); // Adjust interval as needed
+setInterval(() => slideTools(), 2000); 
 
 // Add buttons for user control (optional)
 const prevButton = $("#prevbtn"),
   nextButton = $("#nxtbtn");
 
 prevButton.addEventListener("click", () => slideTools("backward"));
-nextButton.addEventListener("click", ()=>slideTools("forward"));
+nextButton.addEventListener("click", () => slideTools());
 
 // intersection observer
 const options = { root: null, rootMargin: "24px", threshold: 0 };
@@ -69,7 +62,6 @@ const pageEffect = (element) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let target = entry.target;
-
         target.classList.add("slideUp");
         observer.disconnect();
       }
