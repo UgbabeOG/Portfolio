@@ -22,8 +22,8 @@ const closeSidebar = () => {
   navList.style.transform = "translateX(100%)";
   body.classList.remove("no-scroll");
 };
-navList.addEventListener("click", (event) => {
-  if (event.target.closest("#navlinks")) {
+navList.addEventListener("click", (e) => {
+  if (e.target.closest(".navlinks")) {
     closeSidebar();
   }
 });
@@ -46,7 +46,7 @@ function slideTools(direction = "forward") {
 }
 
 // Set up an interval to automatically rotate the asides
-setInterval(() => slideTools(), 2000); 
+setInterval(() => slideTools(), 2000);
 
 // Add buttons for user control (optional)
 const prevButton = $("#prevbtn"),
