@@ -27,9 +27,45 @@ navList.addEventListener("click", (event) => {
     closeSidebar();
   }
 });
+// carousel for tools
+const toolsDiv = $(".tools"),
+  tools = $(".tool"),
+  toolsLength = tools.length;
+let currentTool = 0;
+
+function slideTools(direction = "forward") {
+  const previousAside = currentTool;
+  currentTool =
+    direction === "forward"
+      ? (currentTool + 1) % toolsLength
+      : (currentTool - 1 + toolsLength) % toolsLength;
+
+  tools[previousAside].classList.remove("active");
+  tools[previousAside].style.transform = "scale(1)"; // Reset previous aside
+
+  tools[currentTool].classList.add("active");
+  tools[currentTool].style.transform = "scale(1.1)"; // Apply initial scaling
+
+  setTimeout(() => {
+    tools[currentTool].style.transform = "scale(1)"; // Smooth transition
+  }, 300);
+}
+
+// Start the carousel with an initial delay
+setTimeout(slideTools("forward"), 100);
+
+// Set up an interval to automatically rotate the asides
+setInterval(slideTools("forward"), 300); // Adjust interval as needed
+
+// Add buttons for user control (optional)
+const prevButton = $("#prevbtn"),
+  nextButton = $("#nxtbtn");
+
+prevButton.addEventListener("click", () => slideTools("backward"));
+nextButton.addEventListener("click", ()=>slideTools("forward"));
 
 // intersection observer
-const options = { root: null, rootMargin: "0px", threshold: 0 };
+const options = { root: null, rootMargin: "24px", threshold: 0 };
 const pageEffect = (element) => {
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {

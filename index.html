@@ -46,8 +46,8 @@
         </ul>
         <aside class="sideMenu">
           <ul class="nav-list-mobile" id="navigation" data-visible="false">
-          <i id="navlinks" class="fa fa-x x"></i>
-          <li id="navlinks"><a href="#about">About</a></li>
+            <i id="navlinks" class="fa fa-x x"></i>
+            <li id="navlinks"><a href="#about">About</a></li>
             <li id="navlinks"><a href="#projects">Projects</a></li>
             <li id="navlinks"><a href="#contact">Contact</a></li>
           </ul>
@@ -56,24 +56,47 @@
     </header>
 
     <section class="about-section">
-      <h2>About</h2>
+      <!-- <h2>About</h2> -->
       <div id="about">
         <div class="author-image"></div>
         <div class="about-text">
           <p>
-            Hello, I'm Ugbabe Godwin, a talented web developer with expertise in
-            HTML, CSS, JavaScript, React, and NodeJs. I have a passion for
-            creating visually stunning and user-friendly websites. My commitment
-            to continuous learning and staying up to date with latest industry
-            trends allows me to craft modern and responsive web solutions that
-            leave a lasting impression. Thank you for visiting!
+            Hello, I'm Ugbabe Godwin, a talented web developer. I have a passion
+            for creating visually stunning and user-friendly websites. My
+            commitment to continuous learning and staying up to date with latest
+            industry trends allows me to craft modern and responsive web
+            solutions that leave a lasting impression. Thank you for visiting!
           </p>
           <p>Ugbabe Owoicho Godwin</p>
         </div>
       </div>
     </section>
-
-    <section class="project-section obs">
+    <section class="skillset">
+      <h2>Tech Toolbox</h2>
+      <p class="mb">Toolbox Open Sesame! My arsenal of programming prowess.</p>
+      <div class="tools">
+        <buttton id="prevbtn"><i class="fa fa-chevron-left"></i></buttton>
+        <aside class="tool"><i class="fab skill fa-html5">HTML5</i> </aside>
+        <aside class="tool"><i class="fab skill fa-css3">CSS3</i> </aside>
+        <aside class="tool">
+          <i class="fab skill fa-js">JavaScript</i> 
+        </aside>
+        <aside class="tool">
+          <i class="fab skill fa-react">React.js</i> 
+        </aside>
+        <aside class="tool">
+          <i class="fab skill fa-node-js">Node.js</i> 
+        </aside>
+        <aside class="tool">
+          <i class="fab skill fa-python">Python</i> 
+        </aside>
+        <aside class="tool">
+          <i class="fab skill fa-github-square">GitHub</i> 
+        </aside>
+        <buttton id="nxtbtn"><i class="fa fa-chevron-right"></i></buttton>
+      </div>
+    </section>
+    <section class="project-section">
       <h2>My Projects</h2>
       <p style="color: #232042; padding: 1.2rem">
         Explore my impressive portfolio of web development projects, featuring
@@ -83,7 +106,7 @@
       <div id="projects">
         <!-- Project Articles -->
         <!-- Rock Paper Scissors -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class=""
             target="_blank"
@@ -110,7 +133,7 @@
           </a>
         </article>
         <!-- Tic-Tac-Toe -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class=""
             href="/Tic-Tac-Toe/tictactoe.html"
@@ -137,7 +160,7 @@
           </a>
         </article>
         <!-- calculator -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class="project-title"
             href="/calculator/mycalculator.html"
@@ -164,7 +187,7 @@
           >
         </article>
         <!-- easybank -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class="project-title"
             href="https://chocoseasybank.netlify.app"
@@ -191,7 +214,7 @@
           >
         </article>
         <!-- countdown -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class="project-title"
             href="./countdown.html"
@@ -218,7 +241,7 @@
           >
         </article>
         <!-- analog clock -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class="project-title"
             href="/analogClock/clock.html"
@@ -247,7 +270,7 @@
           >
         </article>
         <!-- recipe finder -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class="project-title"
             href="https://chocos-recipe-app.netlify.app"
@@ -276,7 +299,7 @@
           >
         </article>
         <!-- image finder -->
-        <article class="project-card">
+        <article class="project-card obs">
           <a
             class="project-title"
             href="https://chocos-image-app.netlify.app"
@@ -307,7 +330,7 @@
       </div>
     </section>
 
-    <section id="contact" class="obs">
+    <section id="contact">
       <h2>GET IN TOUCH</h2>
       <p class="c">
         Please, contact me for job offers and coding tips, Thank you!
@@ -360,11 +383,7 @@
             </div>
             <div class="email">
               <label for="message">Your Message</label>
-              <textarea
-                type="text"
-                name="message"
-                id="email"
-              ></textarea>
+              <textarea type="text" name="message" id="email"></textarea>
             </div>
           </form>
           <button type="submit" class="submit-btn">Submit</button>
