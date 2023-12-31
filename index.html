@@ -21,7 +21,7 @@
       property="og:description"
       content="My portfolio website showcasing my skills and experience in web development."
     />
-
+    <meta property="og:url" content="https://chocos-portfolio.netlify.app" />
     <meta property="og:url" content="https://chocos-portfolio.netlify.app" />
     <link rel="stylesheet" href="/styles.css" />
     <title>Choco's Portfolio</title>
@@ -57,8 +57,8 @@
     </header>
 
     <main>
-      <section class="welcome">
-        <div class=""><h2>Ugbabe Choco</h2></div>
+      <section class="welcome bounce-in-left color-change-4x">
+        <div class=""><h2 class="">Ugbabe Choco</h2></div>
       </section>
       <section class="about-section">
         <h2>About</h2>
@@ -79,85 +79,100 @@
       </section>
       <section class="skillset">
         <h2>Tech Toolbox</h2>
-        <p class="mb">
+        <p class="mb p">
           Toolbox Open Sesame!<br />
           My arsenal of programming prowess.
         </p>
-        <div class="flex">
-          <button id="prevbtn"><i class="fa fa-chevron-left"></i></button>
+        <div class="toolsContainer">
+          <!-- <button id="prevbtn"><i class="fa fa-chevron-left"></i></button> -->
           <div class="toolsBox">
             <article class="grid tool-card">
               <aside class="tool">
                 <i class="fab skill fa-html5">HTML5</i>
               </aside>
-              <h4>HTML5</h4>
-              <p>
-                Like digital building blocks, I craft web magic with structure.
-              </p>
+              <div>
+                <h4>HTML5</h4>
+                <p>
+                  Like digital building blocks, I craft web magic with
+                  structure.
+                </p>
+              </div>
             </article>
             <article class="grid tool-card">
               <aside class="tool"><i class="fab skill fa-css3">CSS3</i></aside>
-              <h4>CSS3</h4>
-              <p>
-                The artistic flair that paints life into my project visions!
-              </p>
+              <div class="">
+                <h4>CSS3</h4>
+                <p>
+                  The artistic flair that paints life into my project visions!
+                </p>
+              </div>
             </article>
             <article class="grid tool-card">
-              <aside class="tool grid">
+              <aside class="tool">
                 <i class="fab skill fa-js">JavaScript</i>
               </aside>
-              <h4>JavaScript</h4>
-              <p>
-                Breathing life into websites, coding dynamism and interactions
-              </p>
+              <div class="">
+                <h4>JavaScript</h4>
+                <p>
+                  Breathing life into websites, coding dynamism and interactions.
+                </p>
+              </div>
             </article>
             <article class="grid tool-card">
               <aside class="tool">
                 <i class="fab skill fa-react">React.js</i>
               </aside>
-              <h4>React.js</h4>
-              <p>
-                Sculpting user interfaces, creating dynamic and reusable
-                components
-              </p>
+              <div class="">
+                <h4>React.js</h4>
+                <p>
+                  Sculpting user interfaces, creating dynamic and reusable
+                  components.
+                </p>
+              </div>
             </article>
             <article class="grid tool-card">
               <aside class="tool">
                 <i class="fab skill fa-node-js">Node.js</i>
               </aside>
-              <h4>Node.js</h4>
-              <p>
-                Empowering servers, facilitating scalable and real-time
-                applications.
-              </p>
+              <div class="">
+                <h4>Node.js</h4>
+                <p>
+                  Empowering servers, facilitating scalable and real-time
+                  applications.
+                </p>
+              </div>
             </article>
             <article class="grid tool-card">
               <aside class="tool">
                 <i class="fab skill fa-python">Python</i>
               </aside>
-              <h4>Python</h4>
-              <p>
-                Crafting versatile solutions, balancing simplicity and power.
-              </p>
+              <div class="">
+                <h4>Python</h4>
+                <p>
+                  Crafting versatile solutions, balancing simplicity and power.
+                </p>
+              </div>
             </article>
 
             <article class="grid tool-card">
               <aside class="tool">
                 <i class="fab skill fa-github-square">GitHub</i>
               </aside>
-              <h4>GitHub</h4>
-              <p>
-                Version control tool Crafting code together, nurturing
-                collaborative development.
-              </p>
+              <div class="">
+                <h4>GitHub</h4>
+                <p>
+                  Version control tool, Crafting code together, nurturing
+                  collaborative development.
+                </p>
+              </div>
             </article>
           </div>
-          <button id="nxtbtn"><i class="fa fa-chevron-right"></i></button>
+          <!-- <button id="nxtbtn"><i class="fa fa-chevron-right"></i></button> -->
         </div>
       </section>
       <section class="project-section">
         <h2>My Projects</h2>
-        <p style="color: #232042; padding: 1.2rem">
+        <p class="p">
           Explore my impressive portfolio of web development projects, featuring
           Rock Paper Scissors, Simple Countdown, Calculator, EasyBank Landing
           Page, Tic Tac Toe game, and Analog Clock.
@@ -444,7 +459,7 @@
                 />
               </div>
               <div class="email">
-                <label for="message">Your Message</label>
+                <label for="message">Message</label>
                 <textarea type="text" name="message" id="email"></textarea>
               </div>
             </form>

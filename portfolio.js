@@ -8,7 +8,8 @@ const $ = (x) => {
   navList = $(".mobileNav"),
   aboutImageEffect = document.querySelectorAll(".author-image"),
   aboutTextEffect = document.querySelectorAll(".about-text"),
-  sections = $(".pageEffect");
+  sections = $(".pageEffect"),
+  toolCards = $(".tool-card");
 
 hamburger.addEventListener("click", () => {
   isVisible = navList.dataset.visible === "true";
@@ -49,14 +50,10 @@ function slideTools(direction = "forward") {
 }
 
 // Set up an interval to automatically rotate the asides
-setInterval(() => slideTools(), 2000);
-
-// Add buttons for user control (optional)
-const prevButton = $("#prevbtn"),
-  nextButton = $("#nxtbtn");
-
-prevButton.addEventListener("click", () => slideTools("backward"));
-nextButton.addEventListener("click", () => slideTools());
+setInterval(() => slideTools(), 3500);
+toolCards.forEach((card, index) => {
+  card.style.animationDelay = `${index * 1.5}s`; // Adjust delay for staggered animation
+});
 
 // intersection observer
 const applyEffectOnIntersection = (elements, effectClass) => {

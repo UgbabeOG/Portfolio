@@ -121,11 +121,10 @@ a:hover {
 }
 
 .about-section h2 {
-  border-bottom: 0.5px solid #ffffff;
+  border-bottom: 0.5px solid #262424;
   padding-bottom: 1rem;
-  margin-top: 1.5rem;
   text-align: center;
-  color: rgb(20, 174, 225);
+  color: rgb(27, 28, 29);
 }
 
 /* Styling for the "about" content */
@@ -178,31 +177,48 @@ a:hover {
   color: #232042;
   text-align: center;
 }
+.toolsContainer {
+  width: 100%;
+  overflow: hidden;
+}
 .toolsBox {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: 1rem;
+  gap: 1.5rem;
+  animation: slideTools 20s ease-in-out infinite;
 }
 .skill {
   transform: scale(4);
 }
 .grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-} .flex{display: flex;}
-.tool-card {
-  border-radius: 0.312rem;
-  background-color: #fff;
-  box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
 }
-#nxtbtn,
-#prevbtn {
-  background: none;
-  width: 1.2rem;
-  border: none;
-  cursor: pointer;
+
+.tool-card {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  transition: transform 0.5s ease-in-out;
+  padding: 1rem;
+  border-radius: 25px;
+  background: #e0e0e0;
+  box-shadow: -9px 9px 18px #9d9d9d, 9px -9px 18px #ffffff;
+}
+.tool-card p {
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  text-align: left;
+  color: #3a3838;
+  font-size: 0.8rem;
+}
+.tool-card h4 {
+  color: #232042;
+  text-align: center;
+}
+.tool-card:hover {
+  transform: scale(1.1);
 }
 /* Project article section styles */
 .project-section {
@@ -259,15 +275,15 @@ a:hover {
 }
 
 /* Styling for project cards */
-.project-card {
-  border-radius: 0.312rem;
+.project-card { transition: transform 0.5s ease-in-out;
+  border-radius: 0.9rem;
   background-color: #fff;
-  box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
+  box-shadow: 0px 3px 32px rgba(0, 0, 26, 0.2);
 }
 
 /* Hover effect on project cards */
 .project-card:hover {
-  transform: translateY(0.5rem);
+  transform: translateY(2rem);
 }
 
 /* Contact section styles */
@@ -313,6 +329,7 @@ a:hover {
   grid-area: header;
 }
 .text {
+  color: #fff;
   padding: 8px;
   grid-area: text;
 }
@@ -338,6 +355,7 @@ a:hover {
   gap: 0.5rem;
 }
 .cta {
+  color: #fff;
   line-height: 1;
   font-size: 0.8rem;
   text-decoration: none;
@@ -359,7 +377,7 @@ a:hover {
 }
 
 /* Styling for the placeholder in input fields */
-.contact-form input:focus ::placeholder {
+.contact-form input:focus::placeholder {
   color: transparent;
 }
 
@@ -403,8 +421,40 @@ a:hover {
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: focus-in-contract-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-
+.color-change-4x {
+  -webkit-animation: color-change-4x 6s linear infinite alternate-reverse both;
+  animation: color-change-4x 6s linear infinite alternate-reverse both;
+}
 /* Keyframes */
+
+@-webkit-keyframes color-change-4x {
+  0% {
+    background: #19dcea;
+  }
+  33.3333% {
+    background: #b22cff;
+  }
+  66.666% {
+    background: #ea2222;
+  }
+  100% {
+    background: #f5be10;
+  }
+}
+@keyframes color-change-4x {
+  0% {
+    background: #19dcea;
+  }
+  33.3333% {
+    background: #b22cff;
+  }
+  66.666% {
+    background: #ea2222;
+  }
+  100% {
+    background: #f5be10;
+  }
+}
 @keyframes slideUp {
   0% {
     opacity: 0;
@@ -555,6 +605,17 @@ a:hover {
     animation-timing-function: ease-out;
   }
 }
+@keyframes slideTools {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 /* Media queries */
 @media (width >= 38.5625rem) {
   .hamburger {
@@ -596,7 +657,7 @@ a:hover {
   .skill {
     transform: scale(2);
   }
-
+  
   /* Styling for the "project" section on smaller screens */
   .project-section {
     padding: 1rem;
@@ -661,3 +722,8 @@ a:hover {
   transform: scale(1.3);
   color: crimson;
 }
+p {
+  padding: 1.2rem;
+  color: grey;
+}
+/* something */
