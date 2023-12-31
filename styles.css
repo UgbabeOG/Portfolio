@@ -179,14 +179,14 @@ a:hover {
 }
 .toolsContainer {
   width: 100%;
-  overflow: hidden;
+  overflow: hidden;position: relative;
 }
 .toolsBox {
   width: 100%;
   display: flex;
   padding: 1rem;
   gap: 1.5rem;
-  animation: slideTools 20s linear infinite both;
+  animation: slideTools 15s linear infinite both;
 }
 .skill {
   transform: scale(4);
@@ -197,7 +197,7 @@ a:hover {
   gap: 1.5rem;
 }
 
-.tool-card {
+.tool-card {height: fit-content;
   flex: 0 0 auto;
   margin-right: 20px;
   transition: transform 0.5s ease-in-out;
@@ -610,6 +610,9 @@ a:hover {
   0% {
     transform: translateX(0);
   }
+  50% {
+    transform: translateX(-150%);
+  }
 
   100% {
     transform: translateX(-360%);
@@ -654,7 +657,7 @@ a:hover {
   /* styling the skillset section*/
 
   .skill {
-    transform: scale(2);
+    transform: scale(2.2);
   }
 
   /* Styling for the "project" section on smaller screens */

@@ -52,6 +52,7 @@ function slideTools(direction = "forward") {
 // Set up an interval to automatically rotate the asides
 setInterval(() => slideTools(), 3500);
 toolCards.forEach((card, index) => {
+  toolsBox.appendChild(card.cloneNode(true));
   card.style.animationDelay = `${index * 1.5}s`; // Adjust delay for staggered animation
 });
 
