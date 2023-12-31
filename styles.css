@@ -186,7 +186,7 @@ a:hover {
   display: flex;
   padding: 1rem;
   gap: 1.5rem;
-  animation: slideTools 20s ease-in-out infinite;
+  animation: slideTools 20s linear infinite both;
 }
 .skill {
   transform: scale(4);
@@ -275,7 +275,8 @@ a:hover {
 }
 
 /* Styling for project cards */
-.project-card { transition: transform 0.5s ease-in-out;
+.project-card {
+  transition: transform 0.5s ease-in-out;
   border-radius: 0.9rem;
   background-color: #fff;
   box-shadow: 0px 3px 32px rgba(0, 0, 26, 0.2);
@@ -406,7 +407,7 @@ a:hover {
   background-color: #232042;
 }
 
-/* animations */
+/*utility animations */
 .slideUp {
   animation: slideUp 1s ease-in-out forwards;
 }
@@ -609,11 +610,9 @@ a:hover {
   0% {
     transform: translateX(0);
   }
-  50% {
-    transform: translateX(-50%);
-  }
+
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-360%);
   }
 }
 /* Media queries */
@@ -657,7 +656,7 @@ a:hover {
   .skill {
     transform: scale(2);
   }
-  
+
   /* Styling for the "project" section on smaller screens */
   .project-section {
     padding: 1rem;
@@ -726,4 +725,3 @@ p {
   padding: 1.2rem;
   color: grey;
 }
-/* something */
