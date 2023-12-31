@@ -106,7 +106,14 @@ a:hover {
     backdrop-filter: blur(2rem);
   }
 }
-
+/* Welcome secction */
+.welcome {
+  height: 100vh;
+  color: #232042;
+  background-color: blueviolet;
+  display: grid;
+  place-items: center;
+}
 /* About section styles */
 .about-section {
   background-color: #f2f2f2;
@@ -123,7 +130,7 @@ a:hover {
 
 /* Styling for the "about" content */
 #about {
-  height: 90vh;
+  height: 100vh;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -171,7 +178,7 @@ a:hover {
   color: #232042;
   text-align: center;
 }
-.tools {
+.toolsBox {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -183,7 +190,12 @@ a:hover {
 }
 .grid {
   display: grid;
-  gap: 0.9rem;
+  gap: 1.5rem;
+} .flex{display: flex;}
+.tool-card {
+  border-radius: 0.312rem;
+  background-color: #fff;
+  box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
 }
 #nxtbtn,
 #prevbtn {
@@ -197,6 +209,7 @@ a:hover {
   background-color: #f2f2f2;
   transition: all 200ms ease-in-out;
   padding: 2rem;
+  height: max-content;
 }
 
 .project-section h2 {
@@ -390,91 +403,6 @@ a:hover {
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: focus-in-contract-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-/* Media queries */
-@media (width >= 38.5625rem) {
-  .hamburger {
-    display: none;
-  }
-  .sideMenu {
-    display: none;
-  }
-}
-@media (width <= 38.5625rem) {
-  .header .nav-list,
-  .desktopnav {
-    display: none;
-  }
-
-  /* Styling for "about" and "projects" sections on smaller screens */
-  #about,
-  #projects {
-    padding: 1rem;
-  }
-
-  /* Styling for the "about" section on smaller screens */
-  .about-section {
-    padding: 1rem;
-  }
-
-  /* Styling for the "about" content on smaller screens */
-  #about {
-    padding: 1rem;
-    flex-direction: column;
-    align-items: center;
-  }
-  .author-image {
-    min-height: 12.5rem;
-    margin-bottom: 1rem;
-  }
-  /* styling the skillset section*/
-
-  .skill {
-    transform: scale(2);
-  }
-
-  /* Styling for the "project" section on smaller screens */
-  .project-section {
-    padding: 1rem;
-  }
-
-  /* Styling for the projects grid on smaller screens */
-  #projects {
-    padding: 1rem;
-  }
-
-  .project-title {
-    font-size: 1.2rem;
-  }
-
-  .project-image {
-    height: 9rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .project-card p {
-    font-size: 0.9rem;
-  }
-
-  /* Styling for the "contact" section on smaller screens */
-  #contact {
-    padding: 1rem;
-  }
-
-  .contact {
-    padding: 1rem;
-  }
-  .contact {
-    flex-direction: column;
-  }
-  .contact-form input {
-    font-size: 0.9rem;
-  }
-
-  #contact .submit-btn {
-    width: 4rem;
-    font-size: 0.9rem;
-  }
-}
 
 /* Keyframes */
 @keyframes slideUp {
@@ -627,7 +555,91 @@ a:hover {
     animation-timing-function: ease-out;
   }
 }
+/* Media queries */
+@media (width >= 38.5625rem) {
+  .hamburger {
+    display: none;
+  }
+  .sideMenu {
+    display: none;
+  }
+}
+@media (width <= 38.5625rem) {
+  .header .nav-list,
+  .desktopnav {
+    display: none;
+  }
 
+  /* Styling for "about" and "projects" sections on smaller screens */
+  #about,
+  #projects {
+    padding: 1rem;
+  }
+
+  /* Styling for the "about" section on smaller screens */
+  .about-section {
+    padding: 1rem;
+  }
+
+  /* Styling for the "about" content on smaller screens */
+  #about {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .author-image {
+    min-height: 12.5rem;
+    margin-bottom: 1rem;
+  }
+  /* styling the skillset section*/
+
+  .skill {
+    transform: scale(2);
+  }
+
+  /* Styling for the "project" section on smaller screens */
+  .project-section {
+    padding: 1rem;
+  }
+
+  /* Styling for the projects grid on smaller screens */
+  #projects {
+    padding: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-image {
+    height: 9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Styling for the "contact" section on smaller screens */
+  #contact {
+    padding: 1rem;
+  }
+
+  .contact {
+    padding: 1rem;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact-form input {
+    font-size: 0.9rem;
+  }
+
+  #contact .submit-btn {
+    width: 4rem;
+    font-size: 0.9rem;
+  }
+}
 /* Utility classes */
 .no-scroll {
   overflow: hidden;

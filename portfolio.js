@@ -5,7 +5,10 @@ const $ = (x) => {
   hamburgerIcon = $("#hamburger-icon"),
   body = $(".body"),
   hamburger = $(".hamburger"),
-  navList = $(".mobileNav");
+  navList = $(".mobileNav"),
+  aboutImageEffect = document.querySelectorAll(".author-image"),
+  aboutTextEffect = document.querySelectorAll(".about-text"),
+  sections = $(".pageEffect");
 
 hamburger.addEventListener("click", () => {
   isVisible = navList.dataset.visible === "true";
@@ -28,7 +31,7 @@ navList.addEventListener("click", (e) => {
   }
 });
 // carousel for tools
-const toolsDiv = $(".tools"),
+const toolsBox = $(".toolsBox"),
   tools = $(".tool"),
   toolsLength = tools.length;
 let currentTool = 0;
@@ -56,18 +59,22 @@ prevButton.addEventListener("click", () => slideTools("backward"));
 nextButton.addEventListener("click", () => slideTools());
 
 // intersection observer
-const options = { root: null, rootMargin: "24px", threshold: 0 };
-const pageEffect = (element) => {
-  const io = new IntersectionObserver((entries, observer) => {
+const applyEffectOnIntersection = (elements, effectClass) => {
+  const options = { root: null, rootMargin: "10px", threshold: 0 };
+  const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        let target = entry.target;
-        target.classList.add("slideUp");
-        observer.disconnect();
+        const target = entry.target;
+        target.classList.add(effectClass);
+        observer.unobserve(target);
       }
     });
   }, options);
-  io.observe(element);
-};
-const sections = $(".obs");
-sections.forEach((section) => pageEffect(section));
+
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+}; // Applying effects
+applyEffectOnIntersection(aboutImageEffect, "bounce-in-left");
+applyEffectOnIntersection(aboutTextEffect, "focus-in-contract-bck");
+applyEffectOnIntersection(sections, "slideUp");
