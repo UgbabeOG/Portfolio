@@ -112,7 +112,8 @@ a:hover {
   color: #232042;
   background-color: blueviolet;
   display: grid;
-  place-items: center; text-align: center;
+  place-items: center;
+  text-align: center;
 }
 .welcome p {
   color: #232042;
@@ -182,7 +183,8 @@ a:hover {
 }
 .toolsContainer {
   width: 100%;
-  overflow: hidden;position: relative;
+  overflow: hidden;
+  position: relative;
 }
 .toolsBox {
   width: 100%;
@@ -200,7 +202,8 @@ a:hover {
   gap: 1.5rem;
 }
 
-.tool-card {height: fit-content;
+.tool-card {
+  height: fit-content;
   flex: 0 0 auto;
   margin-right: 20px;
   transition: transform 0.5s ease-in-out;
@@ -294,7 +297,7 @@ a:hover {
 #contact {
   padding: 2rem;
   background-color: #232042;
-  color: antiquewhite;
+  color: azure;
   border-bottom: 0.5px solid #ffffff;
 }
 
@@ -304,7 +307,7 @@ a:hover {
   text-align: center;
 }
 #contact p {
-  text-align: center;
+  text-align: center; color: azure;
 }
 
 /* Styling for the contact content */
@@ -324,7 +327,7 @@ a:hover {
   place-items: center;
   gap: 1rem;
   color: azure;
-  border-radius: 14px;
+  border-radius: 14px; border: 0.5px solid azure;
 }
 
 /* Styling for the media titles */
@@ -337,17 +340,17 @@ a:hover {
   grid-area: text;
 }
 /* Styling for the Instagram icon */
-.ig {
+.ig { color: darksalmon;
   grid-area: ig;
 }
 
 /* Styling for the Twitter icon */
-.twitter {
+.twitter { color: #19dcea;
   grid-area: twitter;
 }
 
 /* Styling for the WhatsApp icon */
-.whatsapp {
+.whatsapp { color: aquamarine;
   grid-area: whatsapp;
 }
 
