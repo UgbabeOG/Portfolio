@@ -95,7 +95,7 @@ a:hover {
 #hamburger-icon {
   height: 1rem;
 }
-.x {
+.x {z-index: 100;
   background-color: #232042;
   color: rgb(224, 220, 220);
   cursor: pointer;
@@ -253,7 +253,6 @@ a:hover {
 .project-title {
   display: block;
   padding: 0.5rem;
-  margin: 0.5rem;
   font-size: 1.4rem;
   font-weight: bold;
   text-align: center;
@@ -272,7 +271,7 @@ a:hover {
 
 /* Styling for project card paragraphs */
 .project-card p {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   line-height: 1.5;
   text-align: left;
   color: #868686;
@@ -307,7 +306,8 @@ a:hover {
   text-align: center;
 }
 #contact p {
-  text-align: center; color: azure;
+  text-align: center;
+  color: azure;
 }
 
 /* Styling for the contact content */
@@ -327,7 +327,8 @@ a:hover {
   place-items: center;
   gap: 1rem;
   color: azure;
-  border-radius: 14px; border: 0.5px solid azure;
+  border-radius: 14px;
+  border: 0.5px solid azure;
 }
 
 /* Styling for the media titles */
@@ -340,17 +341,20 @@ a:hover {
   grid-area: text;
 }
 /* Styling for the Instagram icon */
-.ig { color: darksalmon;
+.ig {
+  color: rgb(230, 94, 49);
   grid-area: ig;
 }
 
 /* Styling for the Twitter icon */
-.twitter { color: #19dcea;
+.twitter {
+  color: #19dcea;
   grid-area: twitter;
 }
 
 /* Styling for the WhatsApp icon */
-.whatsapp { color: aquamarine;
+.whatsapp {
+  color: aquamarine;
   grid-area: whatsapp;
 }
 
