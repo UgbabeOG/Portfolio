@@ -9,6 +9,7 @@ const $ = (x) => {
   aboutImageEffect = document.querySelectorAll(".author-image"),
   aboutTextEffect = document.querySelectorAll(".about-text"),
   sections = $(".pageEffect"),
+  copyRight = $("#copyright"),
   toolCards = $(".tool-card");
 
 hamburger.addEventListener("click", () => {
@@ -76,3 +77,5 @@ const applyEffectOnIntersection = (elements, effectClass) => {
 applyEffectOnIntersection(aboutImageEffect, "bounce-in-left");
 applyEffectOnIntersection(aboutTextEffect, "focus-in-contract-bck");
 applyEffectOnIntersection(sections, "slideUp");
+// copyright
+copyRight.textContent = new Date().getFullYear();
