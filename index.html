@@ -22,7 +22,6 @@
       content="My portfolio website showcasing my skills and experience in web development."
     />
     <meta property="og:url" content="https://chocos-portfolio.netlify.app" />
-    <meta property="og:url" content="https://chocos-portfolio.netlify.app" />
     <link rel="stylesheet" href="/styles.css" />
     <title>Choco's Portfolio</title>
     <script src="./all.min.js" defer></script>
@@ -63,8 +62,9 @@
         <div class="">
           <h2 class="focus-in-contract-bck">Ugbabe Choco</h2>
           <p>
-            Problem solver, not code compiler. Creative thinker using technology
-            to bridge the gap between imagination and reality.
+            Problem solver, not code compiler. <br />
+            Creative thinker using technology to bridge the gap between
+            imagination and reality.
           </p>
         </div>
       </section>
@@ -426,53 +426,38 @@
             <div class="media-icon ig">
               <i class="fab fa-instagram scale"></i>
 
-              <p class="cta">Let's connect on 📸 Instagram!</p>
+              <p class="cta">
+                <a href="http://" target="_blank" rel="noopener noreferrer"
+                  >Let's connect on 📸 Instagram!</a
+                >
+              </p>
             </div>
             <div class="media-icon twitter">
               <i class="fab fa-twitter scale"></i>
-              <a
-                href="https://twitter.com/Chocothe1st"
-                target="_blank"
-                class="cta"
-                >Follow me on 📸 Twitter</a
-              >
+              <p class="cta">
+                <a href="https://twitter.com/Chocothe1st" target="_blank"
+                  >Follow me on 📸 Twitter</a
+                >
+              </p>
             </div>
             <div class="media-icon whatsapp">
               <i class="fab fa-whatsapp scale"></i>
-              <a href="#" class="cta">Connect with me on whatsapp</a>
+              <p class="cta">
+                <a href="https://wa.me/qr/FOM22RJRQUBRB1" target="_blank"
+                  >Connect with me on whatsapp</a
+                >
+              </p>
             </div>
           </div>
           <div class="contact-form">
-            <form action="" class="contact-form">
-              <div class="user-name">
-                <label for="username"
-                  ><i class="fa fa-person-arrow-down-to-line"></i
-                ></label>
-                <input
-                  type="text"
-                  autocapitalize="true"
-                  autocomplete="name"
-                  name="username"
-                  id="user-name"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div class="phone">
-                <label for="phoneNumber"><i class="fa fa-phone"></i></label>
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  id="phoneNumber"
-                  autocomplete="tel"
-                  placeholder="+234-567-8945"
-                />
-              </div>
-              <div class="email">
-                <label for="message">Message</label>
-                <textarea type="text" name="message" id="email"></textarea>
-              </div>
-            </form>
-            <button type="submit" class="submit-btn">Submit</button>
+            <button class="phone-button btn" onclick="makeCall()">
+              <i class="fas fa-phone"></i>
+              <span>: +234-803-296-8251</span>
+            </button>
+            <button class="email-button btn" onclick="sendEmail()">
+              <i class="fas fa-envelope"></i>
+              <span>: ugbabe.Og@gmail.com</span>
+            </button>
           </div>
         </div>
       </section>

@@ -77,5 +77,29 @@ const applyEffectOnIntersection = (elements, effectClass) => {
 applyEffectOnIntersection(aboutImageEffect, "bounce-in-left");
 applyEffectOnIntersection(aboutTextEffect, "focus-in-contract-bck");
 applyEffectOnIntersection(sections, "slideUp");
+//contact
+function makeCall() {
+  const phoneNumber = document.querySelector('.phone-button span').textContent.trim();
+  const isAppleDevice = /iPad|iPhone|iPod|Mac/.test(navigator.userAgent);
+
+  if (isAppleDevice) {
+    // Use a more reliable method for Apple devices
+    const scheme = 'tel:';
+    const telLink = document.createElement('a');
+    telLink.href = scheme + phoneNumber;
+    if (telLink.click) {
+      telLink.click();
+    } else {
+      alert('Clicking to call is not supported on this device. Please dial manually.');
+    }
+  } else {
+    window.location.href = `tel:${phoneNumber}`;
+  }
+}
+
+function sendEmail() {
+  const emailAddress = document.querySelector('.email-button span').textContent.trim();
+  window.location.href = `mailto:${emailAddress}`;
+}
 // copyright
 copyRight.textContent = new Date().getFullYear();

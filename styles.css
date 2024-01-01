@@ -95,7 +95,8 @@ a:hover {
 #hamburger-icon {
   height: 1rem;
 }
-.x {z-index: 100;
+.x {
+  z-index: 100;
   background-color: #232042;
   color: rgb(224, 220, 220);
   cursor: pointer;
@@ -320,12 +321,12 @@ a:hover {
 
 /* Styling for the contact labels and icons */
 .contact-label {
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "header header header" "text text text" "ig twitter whatsapp";
   place-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   color: azure;
   border-radius: 14px;
   border: 0.5px solid azure;
@@ -375,36 +376,23 @@ a:hover {
 .contact-form {
   display: flex;
   flex-direction: column;
-  justify-self: end;
+  justify-items: end;
   gap: 1.5rem;
 }
 
-/* Styling for input fields */
-.contact-form input {
-  padding-left: 0.8rem;
-  border: 0.8px solid #232042;
-  border-top: 0px;
-}
-
-/* Styling for the placeholder in input fields */
-.contact-form input:focus::placeholder {
-  color: transparent;
-}
-
 /* Styling for the submit button */
-.submit-btn {
-  width: 6rem;
+.btn {
+  background: none;
   cursor: pointer;
   padding: 0.6rem;
   border: none;
   border-radius: 4px;
-  background-color: rgb(49, 4, 4);
   box-shadow: 0px 3px 32px rgba(182, 182, 236, 0.2);
   color: aliceblue;
 }
 
 /* Hover effect on the submit button */
-.submit-btn:hover {
+.btn:hover {
   background-color: rgb(0, 187, 255);
 }
 
