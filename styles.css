@@ -112,7 +112,10 @@ a:hover {
   color: #232042;
   background-color: blueviolet;
   display: grid;
-  place-items: center;
+  place-items: center; text-align: center;
+}
+.welcome p {
+  color: #232042;
 }
 /* About section styles */
 .about-section {
