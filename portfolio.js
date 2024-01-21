@@ -18,7 +18,7 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.add("opacity");
   hamburger.setAttribute("aria-expanded", !isVisible);
   body.classList.toggle("no-scroll");
-  navList.style.transform = isVisible ? "translateX(100%)" : "translateX(0%)";
+  navList.style.transform = isVisible ? "translateX(200%)" : "translateX(0%)";
 });
 const closeSidebar = () => {
   navList.dataset.visible = false;

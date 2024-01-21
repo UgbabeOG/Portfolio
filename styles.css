@@ -48,7 +48,7 @@ a:hover {
   transition: color 350ms ease-in-out;
 }
 .mobileNav {
-  transform: translateX(100%);
+  transform: translateX(200%);
 }
 .nav-list-mobile {
   position: relative;
@@ -186,9 +186,14 @@ a:hover {
   width: 100%;
   overflow: hidden;
   position: relative;
+
+  /* -webkit-mask: linear-gradient(90deg, transparent, 20% white); */
+  mask: linear-gradient(90deg, transparent, 20% white, white 80%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, 20% white, white 80%, transparent);
+  /* mask: linear-gradient(90deg, white 80%, transparent); */
+  /* -webkit-mask: linear-gradient(90deg, white 80%, transparent); */
 }
 .toolsBox {
-  width: 100%;
   display: flex;
   padding: 1rem;
   gap: 1.5rem;
@@ -298,7 +303,6 @@ a:hover {
 
 /* Styling for project cards */
 .project-card {
-  transition: transform 0.5s ease-in-out;
   border-radius: 0.9rem;
   background-color: #fff;
   box-shadow: 0px 3px 32px rgba(0, 0, 26, 0.2);
@@ -306,7 +310,8 @@ a:hover {
 
 /* Hover effect on project cards */
 .project-card:hover {
-  transform: translateY(2rem);
+  transform: translateY(1rem) !important;
+  transition: transform 2s linear;
 }
 
 /* Contact section styles */
